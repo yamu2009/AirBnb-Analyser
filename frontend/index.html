@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Price Analyser</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Host<span class="coral">Helper</span></h2>
+            </div>
+            
+            <form id="prediction-form">
+                <h3>Listing Details</h3>
+                
+                <div class="form-group">
+                    <label for="neighborhood">Neighborhood</label>
+                    <select id="neighborhood" name="neighborhood">
+                        <option value="downtown">Downtown</option>
+                        <option value="midtown">Midtown</option>
+                        <option value="uptown">Uptown</option>
+                        <option value="suburbs">Suburbs</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="room-type">Room Type</label>
+                    <select id="room-type" name="room_type">
+                        <option value="entire_home">Entire Home/Apt</option>
+                        <option value="private_room">Private Room</option>
+                        <option value="shared_room">Shared Room</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="accommodates">Accommodates</label>
+                    <div class="counter-input">
+                        <button type="button" class="counter-btn" id="dec-accommodates">-</button>
+                        <input type="number" id="accommodates" name="accommodates" value="1" min="1" max="16" readonly>
+                        <button type="button" class="counter-btn" id="inc-accommodates">+</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Amenities</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenities" value="wifi"> WiFi
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenities" value="pool"> Pool
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenities" value="ac"> Air Conditioning
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenities" value="kitchen"> Kitchen
+                        </label>
+                         <label class="checkbox-label">
+                            <input type="checkbox" name="amenities" value="parking"> Free Parking
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="cta-button">Predict Price</button>
+            </form>
+        </aside>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+            <header>
+                <h1>Market Insights</h1>
+                <div class="user-profile">
+                    <span>Welcome, Host</span>
+                    <div class="avatar">H</div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Prediction Card -->
+                <div class="card prediction-card">
+                    <h3>Estimated Nightly Price</h3>
+                    <div class="price-display">
+                        <span class="currency">$</span>
+                        <span id="predicted-price">---</span>
+                        <span class="per-night">/ night</span>
+                    </div>
+                    <p class="confidence">Confidence Score: <span id="confidence-score">--%</span></p>
+                </div>
+
+                <!-- Market Trends Card -->
+                <div class="card trends-card">
+                    <h3>Market Trends</h3>
+                    <div class="chart-placeholder">
+                        <p>Select parameters to view comparable listings trend.</p>
+                        <!-- In a real app, a chart library like Chart.js would go here -->
+                        <div class="mock-chart">
+                            <div class="bar" style="height: 40%"></div>
+                            <div class="bar" style="height: 60%"></div>
+                            <div class="bar" style="height: 85%"></div>
+                            <div class="bar" style="height: 55%"></div>
+                            <div class="bar" style="height: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                 <div class="card stat-card">
+                    <h4>Occupancy Rate</h4>
+                    <span class="stat-value">78%</span>
+                    <span class="stat-trend positive">↑ 4%</span>
+                </div>
+                 <div class="card stat-card">
+                    <h4>Similar Listings</h4>
+                    <span class="stat-value">124</span>
+                    <span class="stat-sub">In your area</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

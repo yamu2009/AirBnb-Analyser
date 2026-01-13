@@ -1,0 +1,355 @@
+:root {
+    --primary-color: #FF385C;
+    /* Airbnb Coral */
+    --text-dark: #222222;
+    --text-light: #717171;
+    --bg-light: #F7F7F7;
+    --white: #FFFFFF;
+    --border-color: #DDDDDD;
+    --shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background: var(--white);
+    border-right: 1px solid var(--border-color);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.logo h2 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 32px;
+    color: var(--text-dark);
+}
+
+.coral {
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-dark);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+select:focus {
+    border-color: var(--text-dark);
+}
+
+/* Counter Input */
+.counter-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.counter-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--white);
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text-light);
+}
+
+.counter-btn:hover {
+    background: var(--bg-light);
+}
+
+.counter-input input {
+    flex: 1;
+    width: auto;
+    text-align: center;
+    border: none;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.counter-input input::-webkit-outer-spin-button,
+.counter-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Checkboxes */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    margin-right: 10px;
+    accent-color: var(--primary-color);
+    width: 16px;
+    height: 16px;
+}
+
+.cta-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to right, #E61E4D 0%, #D80566 50%, #D80566 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.cta-button:active {
+    transform: scale(0.98);
+}
+
+/* Dashboard Styling */
+.dashboard {
+    padding: 32px 48px;
+    overflow-y: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--text-dark);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 24px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.prediction-card {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.prediction-card h3 {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 16px;
+}
+
+.price-display {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.currency {
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+#predicted-price {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.per-night {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-left: 8px;
+}
+
+.confidence {
+    font-size: 12px;
+    color: var(--text-light);
+    background: var(--bg-light);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.trends-card {
+    grid-column: span 2;
+}
+
+.trends-card h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.chart-placeholder {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+}
+
+.chart-placeholder p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.mock-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    height: 120px;
+    width: 80%;
+}
+
+.bar {
+    flex: 1;
+    background: var(--primary-color);
+    border-radius: 4px 4px 0 0;
+    opacity: 0.8;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stat-card h4 {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.stat-trend {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.positive {
+    color: #008a05;
+}
+
+.stat-sub {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .app-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        max-height: 50vh;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trends-card {
+        grid-column: span 1;
+    }
+
+    body {
+        overflow: auto;
+    }
+}
