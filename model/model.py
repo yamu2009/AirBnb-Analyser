@@ -10,6 +10,13 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import mean_absolute_error, r2_score
 
 def train_model(input_path, model_output_path):
+    """
+    Trains a Random Forest Regressor on the provided dataset.
+
+    Args:
+        input_path (str): Path to the input CSV file.
+        model_output_path (str): Path where the trained model will be saved.
+    """
     print(f"Loading data from {input_path}...")
     df = pd.read_csv(input_path)
 
